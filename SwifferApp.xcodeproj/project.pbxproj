@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493460C31AE69076006CD816 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493460C21AE69076006CD816 /* Accounts.framework */; };
+		493460C51AE6907F006CD816 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493460C41AE6907F006CD816 /* Social.framework */; };
 		499B04A51AE68A6000ED1DA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B04A41AE68A6000ED1DA8 /* AppDelegate.swift */; };
 		499B04A71AE68A6000ED1DA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B04A61AE68A6000ED1DA8 /* ViewController.swift */; };
 		499B04AA1AE68A6000ED1DA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499B04A81AE68A6000ED1DA8 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		499B04D91AE68B2D00ED1DA8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04D81AE68B2D00ED1DA8 /* libz.dylib */; };
 		499B04DB1AE68B5000ED1DA8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04DA1AE68B5000ED1DA8 /* libsqlite3.dylib */; };
 		499B04DD1AE68C9400ED1DA8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04DC1AE68C9400ED1DA8 /* Parse.framework */; };
+		499B04E41AE68DE000ED1DA8 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B04E31AE68DE000ED1DA8 /* APIKeys.swift */; };
+		49AEC55A1AE70F4400AF0DE6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AEC5591AE70F4400AF0DE6 /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493460C21AE69076006CD816 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		493460C41AE6907F006CD816 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		499B049F1AE68A6000ED1DA8 /* SwifferApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwifferApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499B04A31AE68A6000ED1DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499B04A41AE68A6000ED1DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +67,8 @@
 		499B04DA1AE68B5000ED1DA8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		499B04DC1AE68C9400ED1DA8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		499B04DE1AE68D2F00ED1DA8 /* SwifferApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwifferApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		499B04E31AE68DE000ED1DA8 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		49AEC5591AE70F4400AF0DE6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49AEC55A1AE70F4400AF0DE6 /* Bolts.framework in Frameworks */,
+				493460C51AE6907F006CD816 /* Social.framework in Frameworks */,
+				493460C31AE69076006CD816 /* Accounts.framework in Frameworks */,
 				499B04DB1AE68B5000ED1DA8 /* libsqlite3.dylib in Frameworks */,
 				499B04D91AE68B2D00ED1DA8 /* libz.dylib in Frameworks */,
 				499B04D71AE68B1400ED1DA8 /* SystemConfiguration.framework in Frameworks */,
@@ -127,6 +138,7 @@
 		499B04A21AE68A6000ED1DA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				499B04E31AE68DE000ED1DA8 /* APIKeys.swift */,
 				499B04AB1AE68A6000ED1DA8 /* Images.xcassets */,
 				499B04AD1AE68A6000ED1DA8 /* LaunchScreen.xib */,
 				499B04A31AE68A6000ED1DA8 /* Info.plist */,
@@ -154,9 +166,12 @@
 		499B04C61AE68AA900ED1DA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				493460C41AE6907F006CD816 /* Social.framework */,
+				493460C21AE69076006CD816 /* Accounts.framework */,
 				499B04DC1AE68C9400ED1DA8 /* Parse.framework */,
 				499B04DA1AE68B5000ED1DA8 /* libsqlite3.dylib */,
 				499B04D81AE68B2D00ED1DA8 /* libz.dylib */,
+				49AEC5591AE70F4400AF0DE6 /* Bolts.framework */,
 				499B04D61AE68B1400ED1DA8 /* SystemConfiguration.framework */,
 				499B04D41AE68B0500ED1DA8 /* StoreKit.framework */,
 				499B04D21AE68AFD00ED1DA8 /* Security.framework */,
@@ -219,6 +234,7 @@
 				TargetAttributes = {
 					499B049E1AE68A6000ED1DA8 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 7VB7L3Q632;
 					};
 					499B04B31AE68A6000ED1DA8 = {
 						CreatedOnToolsVersion = 6.2;
@@ -270,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499B04E41AE68DE000ED1DA8 /* APIKeys.swift in Sources */,
 				499B04A71AE68A6000ED1DA8 /* ViewController.swift in Sources */,
 				499B04A51AE68A6000ED1DA8 /* AppDelegate.swift in Sources */,
 			);
@@ -397,6 +414,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -404,6 +423,7 @@
 				INFOPLIST_FILE = SwifferApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwifferApp/SwifferApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -414,6 +434,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -421,6 +443,7 @@
 				INFOPLIST_FILE = SwifferApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwifferApp/SwifferApp-Bridging-Header.h";
 			};
 			name = Release;
@@ -478,6 +501,7 @@
 				499B04C01AE68A6000ED1DA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		499B04C11AE68A6000ED1DA8 /* Build configuration list for PBXNativeTarget "SwifferAppTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +510,7 @@
 				499B04C31AE68A6000ED1DA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

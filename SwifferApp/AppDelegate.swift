@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 rachelrockaway. All rights reserved.
 //
 
+import Parse
 import UIKit
 
 @UIApplicationMain
@@ -15,7 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        Parse.setApplicationId(kApplicationID, clientKey: kClientID)
+        
+        var testObject = PFObject(className: "TestObject")
+        testObject["Foo"] = "Bar"
+        
+        testObject.saveInBackgroundWithBlock(nil)
+        
+        //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+        //testObject[@"foo"] = @"bar";
+        //[testObject saveInBackground];
+        
+        
         return true
     }
 
