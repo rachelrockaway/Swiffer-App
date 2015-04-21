@@ -13,6 +13,17 @@
 		499B04AC1AE68A6000ED1DA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499B04AB1AE68A6000ED1DA8 /* Images.xcassets */; };
 		499B04AF1AE68A6000ED1DA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499B04AD1AE68A6000ED1DA8 /* LaunchScreen.xib */; };
 		499B04BB1AE68A6000ED1DA8 /* SwifferAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B04BA1AE68A6000ED1DA8 /* SwifferAppTests.swift */; };
+		499B04C71AE68ABB00ED1DA8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04C41AE68AA100ED1DA8 /* AudioToolbox.framework */; };
+		499B04C91AE68AC800ED1DA8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04C81AE68AC800ED1DA8 /* CFNetwork.framework */; };
+		499B04CB1AE68AD300ED1DA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04CA1AE68AD300ED1DA8 /* CoreGraphics.framework */; };
+		499B04CD1AE68ADD00ED1DA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04CC1AE68ADD00ED1DA8 /* CoreLocation.framework */; };
+		499B04CF1AE68AE700ED1DA8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04CE1AE68AE700ED1DA8 /* MobileCoreServices.framework */; };
+		499B04D11AE68AF100ED1DA8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04D01AE68AF100ED1DA8 /* QuartzCore.framework */; };
+		499B04D31AE68AFD00ED1DA8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04D21AE68AFD00ED1DA8 /* Security.framework */; };
+		499B04D51AE68B0500ED1DA8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04D41AE68B0500ED1DA8 /* StoreKit.framework */; };
+		499B04D71AE68B1400ED1DA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04D61AE68B1400ED1DA8 /* SystemConfiguration.framework */; };
+		499B04D91AE68B2D00ED1DA8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04D81AE68B2D00ED1DA8 /* libz.dylib */; };
+		499B04DB1AE68B5000ED1DA8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04DA1AE68B5000ED1DA8 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +47,17 @@
 		499B04B41AE68A6000ED1DA8 /* SwifferAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwifferAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		499B04B91AE68A6000ED1DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499B04BA1AE68A6000ED1DA8 /* SwifferAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwifferAppTests.swift; sourceTree = "<group>"; };
+		499B04C41AE68AA100ED1DA8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		499B04C81AE68AC800ED1DA8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		499B04CA1AE68AD300ED1DA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		499B04CC1AE68ADD00ED1DA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		499B04CE1AE68AE700ED1DA8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		499B04D01AE68AF100ED1DA8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		499B04D21AE68AFD00ED1DA8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		499B04D41AE68B0500ED1DA8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		499B04D61AE68B1400ED1DA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		499B04D81AE68B2D00ED1DA8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		499B04DA1AE68B5000ED1DA8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +65,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499B04DB1AE68B5000ED1DA8 /* libsqlite3.dylib in Frameworks */,
+				499B04D91AE68B2D00ED1DA8 /* libz.dylib in Frameworks */,
+				499B04D71AE68B1400ED1DA8 /* SystemConfiguration.framework in Frameworks */,
+				499B04D51AE68B0500ED1DA8 /* StoreKit.framework in Frameworks */,
+				499B04D31AE68AFD00ED1DA8 /* Security.framework in Frameworks */,
+				499B04D11AE68AF100ED1DA8 /* QuartzCore.framework in Frameworks */,
+				499B04CF1AE68AE700ED1DA8 /* MobileCoreServices.framework in Frameworks */,
+				499B04CD1AE68ADD00ED1DA8 /* CoreLocation.framework in Frameworks */,
+				499B04CB1AE68AD300ED1DA8 /* CoreGraphics.framework in Frameworks */,
+				499B04C91AE68AC800ED1DA8 /* CFNetwork.framework in Frameworks */,
+				499B04C71AE68ABB00ED1DA8 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +92,7 @@
 		499B04961AE68A6000ED1DA8 = {
 			isa = PBXGroup;
 			children = (
+				499B04C61AE68AA900ED1DA8 /* Frameworks */,
 				499B04A11AE68A6000ED1DA8 /* SwifferApp */,
 				499B04B71AE68A6000ED1DA8 /* SwifferAppTests */,
 				499B04A01AE68A6000ED1DA8 /* Products */,
@@ -80,8 +114,6 @@
 				499B04A41AE68A6000ED1DA8 /* AppDelegate.swift */,
 				499B04A61AE68A6000ED1DA8 /* ViewController.swift */,
 				499B04A81AE68A6000ED1DA8 /* Main.storyboard */,
-				499B04AB1AE68A6000ED1DA8 /* Images.xcassets */,
-				499B04AD1AE68A6000ED1DA8 /* LaunchScreen.xib */,
 				499B04A21AE68A6000ED1DA8 /* Supporting Files */,
 			);
 			path = SwifferApp;
@@ -90,6 +122,8 @@
 		499B04A21AE68A6000ED1DA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				499B04AB1AE68A6000ED1DA8 /* Images.xcassets */,
+				499B04AD1AE68A6000ED1DA8 /* LaunchScreen.xib */,
 				499B04A31AE68A6000ED1DA8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +144,24 @@
 				499B04B91AE68A6000ED1DA8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		499B04C61AE68AA900ED1DA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				499B04DA1AE68B5000ED1DA8 /* libsqlite3.dylib */,
+				499B04D81AE68B2D00ED1DA8 /* libz.dylib */,
+				499B04D61AE68B1400ED1DA8 /* SystemConfiguration.framework */,
+				499B04D41AE68B0500ED1DA8 /* StoreKit.framework */,
+				499B04D21AE68AFD00ED1DA8 /* Security.framework */,
+				499B04D01AE68AF100ED1DA8 /* QuartzCore.framework */,
+				499B04CE1AE68AE700ED1DA8 /* MobileCoreServices.framework */,
+				499B04CC1AE68ADD00ED1DA8 /* CoreLocation.framework */,
+				499B04CA1AE68AD300ED1DA8 /* CoreGraphics.framework */,
+				499B04C81AE68AC800ED1DA8 /* CFNetwork.framework */,
+				499B04C41AE68AA100ED1DA8 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
