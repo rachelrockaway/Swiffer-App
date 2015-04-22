@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Time Line Table View Controller-->
         <scene sceneID="XD7-lF-u1E">
             <objects>
-                <tableViewController id="2RZ-5P-nW9" sceneMemberID="viewController">
+                <tableViewController id="2RZ-5P-nW9" customClass="TimeLineTableViewController" customModule="SwifferApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="121" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gfg-0A-GYf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="lHT-HX-4Q7">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="lHT-HX-4Q7">
                                             <rect key="frame" x="21" y="32" width="279" height="72"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="290.13333333333333" y="309.56"/>
         </scene>
-        <!--View Controller-->
+        <!--Compose View Controller-->
         <scene sceneID="ejf-8j-WSU">
             <objects>
-                <viewController id="qOd-KQ-qjx" sceneMemberID="viewController">
+                <viewController id="qOd-KQ-qjx" customClass="ComposeViewController" customModule="SwifferApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NGn-MH-2YE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,12 +86,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TKF-gf-pHL"/>
+                    <navigationItem key="navigationItem" id="TKF-gf-pHL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Adv-bX-MXR">
+                            <connections>
+                                <action selector="sendSweet:" destination="qOd-KQ-qjx" id="3Xs-A5-9Da"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="characterRemainingLabel" destination="eLa-KT-aSY" id="dic-c2-Tzd"/>
+                        <outlet property="sweetTextView" destination="HxO-UF-sHf" id="qjy-nS-64t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1h-9z-IVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="526" y="309"/>
+            <point key="canvasLocation" x="486" y="309"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d8g-kG-nG6">
