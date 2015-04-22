@@ -31,6 +31,7 @@
 		49AEC55C1AE71C4500AF0DE6 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49AEC55B1AE71C4500AF0DE6 /* Storyboard.storyboard */; };
 		49AEC5601AE81D8300AF0DE6 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEC55F1AE81D8300AF0DE6 /* TimeLineTableViewController.swift */; };
 		49AEC5621AE81DCB00AF0DE6 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEC5611AE81DCB00AF0DE6 /* ComposeViewController.swift */; };
+		49AEC5641AE8201B00AF0DE6 /* SweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEC5631AE8201B00AF0DE6 /* SweetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		49AEC55B1AE71C4500AF0DE6 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		49AEC55F1AE81D8300AF0DE6 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		49AEC5611AE81DCB00AF0DE6 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		49AEC5631AE8201B00AF0DE6 /* SweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				49AEC55B1AE71C4500AF0DE6 /* Storyboard.storyboard */,
 				499B04A41AE68A6000ED1DA8 /* AppDelegate.swift */,
+				49AEC5631AE8201B00AF0DE6 /* SweetTableViewCell.swift */,
 				49AEC5611AE81DCB00AF0DE6 /* ComposeViewController.swift */,
 				49AEC55F1AE81D8300AF0DE6 /* TimeLineTableViewController.swift */,
 				499B04A61AE68A6000ED1DA8 /* ViewController.swift */,
@@ -296,6 +299,7 @@
 				499B04E41AE68DE000ED1DA8 /* APIKeys.swift in Sources */,
 				499B04A71AE68A6000ED1DA8 /* ViewController.swift in Sources */,
 				49AEC5601AE81D8300AF0DE6 /* TimeLineTableViewController.swift in Sources */,
+				49AEC5641AE8201B00AF0DE6 /* SweetTableViewCell.swift in Sources */,
 				499B04A51AE68A6000ED1DA8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
