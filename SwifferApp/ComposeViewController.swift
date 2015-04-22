@@ -33,6 +33,14 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func sendSweet(sender: UIBarButtonItem) {
+        
+        var sweet = PFObject(className: "Sweets")
+        sweet["content"] = sweetTextView.text
+        sweet["sweeter"] = PFUser.currentUser()
+        
+        sweet.saveInBackgroundWithBlock(nil)
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     /*

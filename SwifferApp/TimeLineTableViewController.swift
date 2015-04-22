@@ -9,6 +9,63 @@
 import UIKit
 
 class TimeLineTableViewController: UITableViewController {
+    
+    override func viewDidAppear(animated: Bool) {
+        if PFUser.currentUser() == nil {
+            var loginAlert:UIAlertController = UIAlertController(title: "Sign Up / Login", message: "Please sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            loginAlert.addTextFieldWithConfigurationHandler({
+                textfield in
+                textfield.placeholder = "Your username"
+            })
+            
+            loginAlert.addTextFieldWithConfigurationHandler({
+                textfield in
+                textfield.placeholder = "Your password"
+            })
+            
+            loginAlert.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default, handler: {
+                alertAction in
+                let textFields:NSArray = loginAlert.textFields as AnyObject! as NSArray
+                let usernameTextField:UITextField = textFields.objectAtIndex(0) as UITextField
+                let passwordTextField:UITextField = textFields.objectAtIndex(1) as UITextField
+                
+                PFUser.logInWithUsernameInBackground(usernameTextField.text, password: passwordTextField.text){
+                    (user:PFUser!, error:NSError!)->Void in
+                    if user != nil {
+                        println("Login successful")
+                    }else{
+                        println("Login failed")
+                    }
+                    
+                }
+                
+            }))
+            
+            loginAlert.addAction(UIAlertAction(title: "Sign Up", style: UIAlertActionStyle.Default, handler: {
+                alertAction in
+                let textfields:NSArray = loginAlert.textFields as AnyObject! as NSArray
+                let usernameTextField = textfields.objectAtIndex(0) as UITextField
+                let passwordTextField = textfields.objectAtIndex(1) as UITextField
+                    
+                var sweeter:PFUser = PFUser()
+                sweeter.username = usernameTextField.text
+                sweeter.password = passwordTextField.text
+                sweeter.signUpInBackgroundWithBlock{
+                    (success:Bool!, error:NSError!)->Void in
+                    if error == nil{
+                        println("Sign up successful")
+                    }else{
+                        let errorString = error.localizedDescription
+                        println(errorString)
+                    }
+                }
+                
+            }))
+            self.presentViewController(loginAlert, animated: true, completion: nil)
+
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
