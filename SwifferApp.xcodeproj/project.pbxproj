@@ -11,7 +11,6 @@
 		493460C51AE6907F006CD816 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 493460C41AE6907F006CD816 /* Social.framework */; };
 		499B04A51AE68A6000ED1DA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B04A41AE68A6000ED1DA8 /* AppDelegate.swift */; };
 		499B04A71AE68A6000ED1DA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B04A61AE68A6000ED1DA8 /* ViewController.swift */; };
-		499B04AA1AE68A6000ED1DA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499B04A81AE68A6000ED1DA8 /* Main.storyboard */; };
 		499B04AC1AE68A6000ED1DA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499B04AB1AE68A6000ED1DA8 /* Images.xcassets */; };
 		499B04AF1AE68A6000ED1DA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499B04AD1AE68A6000ED1DA8 /* LaunchScreen.xib */; };
 		499B04BB1AE68A6000ED1DA8 /* SwifferAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B04BA1AE68A6000ED1DA8 /* SwifferAppTests.swift */; };
@@ -29,6 +28,7 @@
 		499B04DD1AE68C9400ED1DA8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499B04DC1AE68C9400ED1DA8 /* Parse.framework */; };
 		499B04E41AE68DE000ED1DA8 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B04E31AE68DE000ED1DA8 /* APIKeys.swift */; };
 		49AEC55A1AE70F4400AF0DE6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AEC5591AE70F4400AF0DE6 /* Bolts.framework */; };
+		49AEC55C1AE71C4500AF0DE6 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49AEC55B1AE71C4500AF0DE6 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 		499B04A31AE68A6000ED1DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		499B04A41AE68A6000ED1DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499B04A61AE68A6000ED1DA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		499B04A91AE68A6000ED1DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		499B04AB1AE68A6000ED1DA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		499B04AE1AE68A6000ED1DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		499B04B41AE68A6000ED1DA8 /* SwifferAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwifferAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +68,7 @@
 		499B04DE1AE68D2F00ED1DA8 /* SwifferApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwifferApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		499B04E31AE68DE000ED1DA8 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		49AEC5591AE70F4400AF0DE6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		49AEC55B1AE71C4500AF0DE6 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +126,9 @@
 		499B04A11AE68A6000ED1DA8 /* SwifferApp */ = {
 			isa = PBXGroup;
 			children = (
+				49AEC55B1AE71C4500AF0DE6 /* Storyboard.storyboard */,
 				499B04A41AE68A6000ED1DA8 /* AppDelegate.swift */,
 				499B04A61AE68A6000ED1DA8 /* ViewController.swift */,
-				499B04A81AE68A6000ED1DA8 /* Main.storyboard */,
 				499B04A21AE68A6000ED1DA8 /* Supporting Files */,
 				499B04DE1AE68D2F00ED1DA8 /* SwifferApp-Bridging-Header.h */,
 			);
@@ -266,7 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499B04AA1AE68A6000ED1DA8 /* Main.storyboard in Resources */,
+				49AEC55C1AE71C4500AF0DE6 /* Storyboard.storyboard in Resources */,
 				499B04AF1AE68A6000ED1DA8 /* LaunchScreen.xib in Resources */,
 				499B04AC1AE68A6000ED1DA8 /* Images.xcassets in Resources */,
 			);
@@ -311,14 +311,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		499B04A81AE68A6000ED1DA8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				499B04A91AE68A6000ED1DA8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		499B04AD1AE68A6000ED1DA8 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

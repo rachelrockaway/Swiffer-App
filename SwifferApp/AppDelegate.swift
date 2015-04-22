@@ -19,15 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         Parse.setApplicationId(kApplicationID, clientKey: kClientID)
         
-        var testObject = PFObject(className: "TestObject")
-        testObject["Foo"] = "Bar"
-        
-        testObject.saveInBackgroundWithBlock(nil)
-        
-        //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-        //testObject[@"foo"] = @"bar";
-        //[testObject saveInBackground];
-        
         
         return true
     }
