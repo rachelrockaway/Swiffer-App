@@ -14,9 +14,16 @@ class ComposeViewController: UIViewController {
     
     @IBOutlet weak var characterRemainingLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sweetTextView.layer.borderColor = UIColor.blackColor().CGColor
+        sweetTextView.layer.borderWidth = 0.5
+        sweetTextView.layer.cornerRadius = 5
 
+        sweetTextView.becomeFirstResponder()
+        
         // Do any additional setup after loading the view.
     }
 
