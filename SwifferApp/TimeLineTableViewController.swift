@@ -10,6 +10,29 @@ import UIKit
 
 class TimeLineTableViewController: UITableViewController {
     
+    var timelineData:NSMutableArray = NSMutableArray()
+    
+    func loadData(){
+        timelineData.removeAllObjects()
+        
+        var findTimelineData:PFQuery = PFQuery(className: "Sweets")
+        
+        findTimelineData.findObjectsInBackgroundWithBlock {
+            (objects:[AnyObject]!, error:NSError!) -> Void in
+            
+            if error == nil {
+                for object in objects{
+                    let sweet:PFObject = object as PFObject
+                    self.timelineData.addObject(object)
+                }
+                
+                let array:NSArray = self.timelineData.reverseObjectEnumerator().allObjects
+                self.timelineData = array as NSMutableArray
+            }
+            
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() == nil {
             var loginAlert:UIAlertController = UIAlertController(title: "Sign Up / Login", message: "Please sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
@@ -87,16 +110,16 @@ class TimeLineTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return timelineData.count
     }
 
-    /*
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
@@ -104,7 +127,6 @@ class TimeLineTableViewController: UITableViewController {
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
