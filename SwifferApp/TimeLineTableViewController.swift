@@ -23,17 +23,21 @@ class TimeLineTableViewController: UITableViewController {
             if error == nil {
                 for object in objects{
                     let sweet:PFObject = object as PFObject
-                    self.timelineData.addObject(object)
+                    self.timelineData.addObject(sweet)
                 }
                 
                 let array:NSArray = self.timelineData.reverseObjectEnumerator().allObjects
-                self.timelineData = array as NSMutableArray
+                self.timelineData = NSMutableArray(array: array)
+                
+                self.tableView.reloadData()
             }
             
         }
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.loadData() 
+        
         if PFUser.currentUser() == nil {
             var loginAlert:UIAlertController = UIAlertController(title: "Sign Up / Login", message: "Please sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
             
@@ -120,9 +124,13 @@ class TimeLineTableViewController: UITableViewController {
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
+        let cell:SweetTableViewCell = tableView!.dequeueReusableCellWithIdentifier("Cell", forIndexPath:indexPath!) as SweetTableViewCell
 
+        let sweet:PFObject = self.timelineData.objectAtIndex(indexPath!.row) as PFObject
+        
+        cell.sweetTextView.text = sweet.objectForKey("content") as String
+        
         // Configure the cell...
 
         return cell

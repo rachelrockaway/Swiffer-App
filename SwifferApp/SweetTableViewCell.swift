@@ -10,6 +10,11 @@ import UIKit
 
 class SweetTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var usernameLabel: UILabel! = UILabel()
+    @IBOutlet weak var timestampLabel: UILabel! = UILabel()
+    @IBOutlet weak var sweetTextView: UITextView! = UITextView()
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
