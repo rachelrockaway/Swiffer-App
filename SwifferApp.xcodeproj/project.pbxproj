@@ -32,6 +32,7 @@
 		49AEC5601AE81D8300AF0DE6 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEC55F1AE81D8300AF0DE6 /* TimeLineTableViewController.swift */; };
 		49AEC5621AE81DCB00AF0DE6 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEC5611AE81DCB00AF0DE6 /* ComposeViewController.swift */; };
 		49AEC5641AE8201B00AF0DE6 /* SweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEC5631AE8201B00AF0DE6 /* SweetTableViewCell.swift */; };
+		49FE5C561AF4639000806322 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FE5C551AF4639000806322 /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		49AEC55F1AE81D8300AF0DE6 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		49AEC5611AE81DCB00AF0DE6 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		49AEC5631AE8201B00AF0DE6 /* SweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetTableViewCell.swift; sourceTree = "<group>"; };
+		49FE5C551AF4639000806322 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../Downloads/parse-library-1/ParseUI.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FE5C561AF4639000806322 /* ParseUI.framework in Frameworks */,
 				49AEC55A1AE70F4400AF0DE6 /* Bolts.framework in Frameworks */,
 				493460C51AE6907F006CD816 /* Social.framework in Frameworks */,
 				493460C31AE69076006CD816 /* Accounts.framework in Frameworks */,
@@ -175,6 +178,7 @@
 		499B04C61AE68AA900ED1DA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49FE5C551AF4639000806322 /* ParseUI.framework */,
 				493460C41AE6907F006CD816 /* Social.framework */,
 				493460C21AE69076006CD816 /* Accounts.framework */,
 				499B04DC1AE68C9400ED1DA8 /* Parse.framework */,
@@ -423,6 +427,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/Stevenson/Downloads/parse-library-1-2",
+					"/Users/Stevenson/Downloads/parse-library-1",
 				);
 				INFOPLIST_FILE = SwifferApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -443,6 +449,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/Stevenson/Downloads/parse-library-1-2",
+					"/Users/Stevenson/Downloads/parse-library-1",
 				);
 				INFOPLIST_FILE = SwifferApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

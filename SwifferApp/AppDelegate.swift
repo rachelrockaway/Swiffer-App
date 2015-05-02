@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 rachelrockaway. All rights reserved.
 //
 
+import Bolts
 import Parse
 import UIKit
 
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
 
         Parse.setApplicationId(kApplicationID, clientKey: kClientID)
         

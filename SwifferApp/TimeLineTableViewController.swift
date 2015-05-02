@@ -8,25 +8,24 @@
 
 import UIKit
 
-class TimeLineTableViewController: UITableViewController {
+class TimeLineTableViewController: UITableViewController, UITableViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
-    var timelineData:NSMutableArray = NSMutableArray()
+    var timelineData = NSMutableArray()
     
-    func loadData(){
+    @IBAction func loadData(){
         timelineData.removeAllObjects()
         
-        var findTimelineData:PFQuery = PFQuery(className: "Sweets")
+        var findTimelineData = PFQuery(className: "Sweets")
         
         findTimelineData.findObjectsInBackgroundWithBlock {
-            (objects:[AnyObject]!, error:NSError!) -> Void in
+            (objects:[AnyObject]?, error:NSError?) -> Void in
             
             if error == nil {
-                for object in objects{
-                    let sweet:PFObject = object as PFObject
-                    self.timelineData.addObject(sweet)
+                for object in objects!{
+                    self.timelineData.addObject(object)
                 }
                 
-                let array:NSArray = self.timelineData.reverseObjectEnumerator().allObjects
+                let array = self.timelineData.reverseObjectEnumerator().allObjects
                 self.timelineData = NSMutableArray(array: array)
                 
                 self.tableView.reloadData()
@@ -36,62 +35,12 @@ class TimeLineTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         self.loadData() 
         
-        if PFUser.currentUser() == nil {
-            var loginAlert:UIAlertController = UIAlertController(title: "Sign Up / Login", message: "Please sign up or login", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            loginAlert.addTextFieldWithConfigurationHandler({
-                textfield in
-                textfield.placeholder = "Your username"
-            })
-            
-            loginAlert.addTextFieldWithConfigurationHandler({
-                textfield in
-                textfield.placeholder = "Your password"
-            })
-            
-            loginAlert.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default, handler: {
-                alertAction in
-                let textFields:NSArray = loginAlert.textFields as AnyObject! as NSArray
-                let usernameTextField:UITextField = textFields.objectAtIndex(0) as UITextField
-                let passwordTextField:UITextField = textFields.objectAtIndex(1) as UITextField
-                
-                PFUser.logInWithUsernameInBackground(usernameTextField.text, password: passwordTextField.text){
-                    (user:PFUser!, error:NSError!)->Void in
-                    if user != nil {
-                        println("Login successful")
-                    }else{
-                        println("Login failed")
-                    }
-                    
-                }
-                
-            }))
-            
-            loginAlert.addAction(UIAlertAction(title: "Sign Up", style: UIAlertActionStyle.Default, handler: {
-                alertAction in
-                let textfields:NSArray = loginAlert.textFields as AnyObject! as NSArray
-                let usernameTextField = textfields.objectAtIndex(0) as UITextField
-                let passwordTextField = textfields.objectAtIndex(1) as UITextField
-                    
-                var sweeter:PFUser = PFUser()
-                sweeter.username = usernameTextField.text
-                sweeter.password = passwordTextField.text
-                sweeter.signUpInBackgroundWithBlock{
-                    (success:Bool!, error:NSError!)->Void in
-                    if error == nil{
-                        println("Sign up successful")
-                    }else{
-                        let errorString = error.localizedDescription
-                        println(errorString)
-                    }
-                }
-                
-            }))
-            self.presentViewController(loginAlert, animated: true, completion: nil)
-
-        }
+        super.viewDidAppear(animated)
+    
+        logInSetup()
     }
 
     override func viewDidLoad() {
@@ -124,18 +73,114 @@ class TimeLineTableViewController: UITableViewController {
     }
 
 
-    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
-        let cell:SweetTableViewCell = tableView!.dequeueReusableCellWithIdentifier("Cell", forIndexPath:indexPath!) as SweetTableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath:indexPath) as! SweetTableViewCell
 
-        let sweet:PFObject = self.timelineData.objectAtIndex(indexPath!.row) as PFObject
+        let sweet = self.timelineData.objectAtIndex(indexPath.row) as! PFObject
         
-        cell.sweetTextView.text = sweet.objectForKey("content") as String
+        cell.sweetTextView.text = sweet.objectForKey("content") as? String
         
+        cell.sweetTextView.alpha = 0
+        cell.timestampLabel.alpha = 0
+        cell.userNameLabel.alpha = 0
+
+        
+        var dataFormatter = NSDateFormatter()
+        dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        cell.timestampLabel.text = dataFormatter.stringFromDate(sweet.createdAt!)
+        
+        //println(sweet.objectForKey("sweeter")!.objectId)
+        
+        var findSweeter:PFQuery = PFUser.query()!
+        findSweeter.whereKey("objectId", equalTo: sweet.objectForKey("sweeter")!.objectId!!)
+        
+        findSweeter.findObjectsInBackgroundWithBlock {
+            (objects:[AnyObject]?, error:NSError?)->Void in
+            if error == nil{
+              //  println(objects.description)
+       let user = (objects as! NSArray).lastObject as! PFUser
+            cell.userNameLabel.text = user.username
+                
+                UIView.animateWithDuration(0.5, animations:{
+                
+                cell.sweetTextView.alpha = 1
+                cell.timestampLabel.alpha = 1
+                cell.userNameLabel.alpha = 1
+                
+                })
+                
+        }
+                
+    }
+
         // Configure the cell...
 
         return cell
     }
+    
+    @IBAction func logoutButton(sender: AnyObject) {
+        
+        PFUser.logOut()
 
+        logInSetup()
+    }
+
+  func logInSetup(){
+        
+        if(PFUser.currentUser() == nil){
+            
+            var logInViewController = PFLogInViewController()
+            
+            logInViewController.delegate = self
+            
+            var signUpViewController = PFSignUpViewController()
+            signUpViewController.fields = (PFSignUpFields.UsernameAndPassword | PFSignUpFields.SignUpButton | PFSignUpFields.Email | PFSignUpFields.Email | PFSignUpFields.DismissButton)
+            signUpViewController.delegate = self
+            
+            logInViewController.signUpController = signUpViewController
+            
+            self.presentViewController(logInViewController, animated: true, completion: nil)
+            
+    }
+    
+}
+
+    //MARK: - Parse Login
+    
+    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
+        
+        if(!username.isEmpty || !password.isEmpty) {
+            return true
+        } else {
+            
+            return false
+        }
+        
+    }
+
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        println("Failed to sign up...")
+    }
+    
+    //MARK: - Parse SignUp
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
+        println("failed to sign up ...")
+    }
+    
+    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
+        println("User dismissed sign up.")
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

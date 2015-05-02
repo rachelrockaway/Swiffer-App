@@ -8,39 +8,57 @@
 
 import UIKit
 
-class ComposeViewController: UIViewController {
+class ComposeViewController: UIViewController, UITextViewDelegate {
 
-    @IBOutlet weak var sweetTextView: UITextView!
+    @IBOutlet weak var SweetTextView: UITextView!
     
-    @IBOutlet weak var characterRemainingLabel: UILabel!
+    @IBOutlet weak var charRemainingLabel: UILabel!
     
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sweetTextView.layer.borderColor = UIColor.blackColor().CGColor
-        sweetTextView.layer.borderWidth = 0.5
-        sweetTextView.layer.cornerRadius = 5
+        SweetTextView.layer.borderColor = UIColor.blackColor().CGColor
+        SweetTextView.layer.borderWidth = 0.5
+        SweetTextView.layer.cornerRadius = 5
+        SweetTextView.delegate = self
 
-        sweetTextView.becomeFirstResponder()
+        SweetTextView.becomeFirstResponder()
         
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    @IBAction func sendSweet(sender: UIBarButtonItem) {
+    @IBAction func sendSweet(sender: AnyObject) {
         
         var sweet = PFObject(className: "Sweets")
-        sweet["content"] = sweetTextView.text
+        sweet["content"] = SweetTextView.text
         sweet["sweeter"] = PFUser.currentUser()
         
-        sweet.saveInBackgroundWithBlock(nil)
+        sweet.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                //The object has been saved
+            } else {
+                // There was a problem
+            }
+        }
         
         self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range:NSRange, replacementText text: String) -> Bool {
+        
+        var newLength = (textView.text as NSString).length + (text as NSString).length - range.length
+        var remainingChar = 140 - newLength
+        
+        charRemainingLabel.text = "\(remainingChar)"
+        
+        return (newLength >= 140) ? false : true 
+        
     }
 
     /*
