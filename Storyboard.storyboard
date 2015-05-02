@@ -56,6 +56,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="9cI-OF-5fB">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="fOv-BY-wYe">
+                            <connections>
+                                <action selector="loadData" destination="2RZ-5P-nW9" id="tYQ-MZ-dGY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="myI-mg-IMU">
                             <connections>
                                 <segue destination="qOd-KQ-qjx" kind="push" id="zlr-8m-7FK"/>
@@ -66,7 +71,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbN-pg-oqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="309"/>
+            <point key="canvasLocation" x="265" y="259"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="ejf-8j-WSU">
@@ -76,8 +81,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eLa-KT-aSY">
-                                <rect key="frame" x="257" y="232" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eLa-KT-aSY">
+                                <rect key="frame" x="270" y="232" width="29" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,13 +107,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="charRemainingLabel" destination="eLa-KT-aSY" id="4L8-rW-dXF"/>
-                        <outlet property="characterRemainingLabel" destination="eLa-KT-aSY" id="dic-c2-Tzd"/>
                         <outlet property="sweetTextView" destination="IJL-qL-sc7" id="Dpc-Oy-wbY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1h-9z-IVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="320"/>
+            <point key="canvasLocation" x="617" y="259"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d8g-kG-nG6">
